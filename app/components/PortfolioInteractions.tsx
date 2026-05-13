@@ -1,0 +1,144 @@
+"use client";
+
+import { useEffect } from "react";
+
+export default function PortfolioInteractions() {
+  useEffect(() => {
+    const nav = document.getElementById("mainNav");
+    const progress = document.getElementById("scrollProgress");
+    const sections = Array.from(document.querySelectorAll<HTMLElement>("section[id]"));
+    const navLinks = Array.from(document.querySelectorAll<HTMLAnchorElement>(".nav-links a"));
+    const hamburger = document.getElementById("hamburger");
+    const navLinksEl = document.getElementById("navLinks");
+    const navBrand = document.querySelector<HTMLElement>(".nav-brand");
+    const heroSection = document.getElementById("hero");
+
+    // Brand starts hidden — hero is visible on page load
+    navBrand?.classList.add("hidden");
+
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const docH = document.documentElement.scrollHeight - window.innerHeight;
+
+      if (progress) {
+        progress.style.transform = `scaleX(${docH > 0 ? scrollY / docH : 0})`;
+      }
+
+      nav?.classList.toggle("scrolled", scrollY > 40);
+
+      let current = "";
+      sections.forEach((section) => {
+        if (scrollY >= section.offsetTop - 120) current = section.id;
+      });
+
+      navLinks.forEach((link) => {
+        link.classList.toggle("active", link.getAttribute("href") === `#${current}`);
+      });
+    };
+
+    const handleMenuClick = () => navLinksEl?.classList.toggle("open");
+    const closeMenu = () => navLinksEl?.classList.remove("open");
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    hamburger?.addEventListener("click", handleMenuClick);
+    navLinksEl?.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", closeMenu);
+    });
+
+    // Show nav brand only when hero section is completely out of viewport
+    let heroObserver: IntersectionObserver | null = null;
+    if (navBrand && heroSection) {
+      heroObserver = new IntersectionObserver(
+        ([entry]) => {
+          navBrand.classList.toggle("hidden", entry.isIntersecting);
+        },
+        { threshold: 0 }
+      );
+      heroObserver.observe(heroSection);
+    }
+
+    // Counter animation
+    let countersStarted = false;
+    const counters = Array.from(document.querySelectorAll<HTMLElement>(".counter"));
+    const animateCounter = (el: HTMLElement) => {
+      const target = Number.parseFloat(el.dataset.target ?? "0");
+      const suffix = el.dataset.suffix ?? "";
+      const duration = 1800;
+      const start = performance.now();
+      const isDecimal = target % 1 !== 0;
+
+      const step = (timestamp: number) => {
+        const elapsed = timestamp - start;
+        const progressValue = Math.min(elapsed / duration, 1);
+        const eased = 1 - Math.pow(1 - progressValue, 3);
+        const current = eased * target;
+        el.textContent = `${isDecimal ? current.toFixed(1) : Math.floor(current)}${suffix}`;
+        if (progressValue < 1) requestAnimationFrame(step);
+      };
+
+      requestAnimationFrame(step);
+    };
+
+    const counterObserver = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((entry) => entry.isIntersecting) && !countersStarted) {
+          countersStarted = true;
+          counters.forEach(animateCounter);
+        }
+      },
+      { threshold: 0.5 }
+    );
+    counters.forEach((counter) => counterObserver.observe(counter));
+
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
+
+    document.querySelectorAll<HTMLElement>(".fade-up, .timeline-item, .achievement-item").forEach((el, i) => {
+      if (el.classList.contains("timeline-item") || el.classList.contains("achievement-item")) {
+        el.style.transitionDelay = `${i * 0.08}s`;
+      }
+      revealObserver.observe(el);
+    });
+
+    // Portfolio video hover — play on enter, pause+reset on leave
+    type VideoHandler = { card: HTMLElement; enter: () => void; leave: () => void };
+    const videoHandlers: VideoHandler[] = [];
+    document.querySelectorAll<HTMLElement>(".portfolio-card").forEach((card) => {
+      const video = card.querySelector<HTMLVideoElement>("video");
+      if (!video) return;
+      const enter = () => { video.play().catch(() => {}); };
+      const leave = () => { video.pause(); video.currentTime = 0; };
+      card.addEventListener("mouseenter", enter);
+      card.addEventListener("mouseleave", leave);
+      videoHandlers.push({ card, enter, leave });
+    });
+
+    handleScroll();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      hamburger?.removeEventListener("click", handleMenuClick);
+      navLinksEl?.querySelectorAll("a").forEach((link) => {
+        link.removeEventListener("click", closeMenu);
+      });
+      heroObserver?.disconnect();
+      counterObserver.disconnect();
+      revealObserver.disconnect();
+      videoHandlers.forEach(({ card, enter, leave }) => {
+        card.removeEventListener("mouseenter", enter);
+        card.removeEventListener("mouseleave", leave);
+      });
+    };
+  }, []);
+
+  return null;
+}
