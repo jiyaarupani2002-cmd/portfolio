@@ -36,17 +36,13 @@ export default function Home() {
               Senior Account Manager &nbsp;·&nbsp; Global Marketing Strategist<br />
               Influencer &amp; Paid Media Expert
             </p>
-            <p className="hero-location">
-              Nationality: Spanish
-              &nbsp;<span className="hero-location-sep">|</span>&nbsp;
-              <svg className="pin-icon" viewBox="0 0 24 24" fill="currentColor" width="12" height="12" aria-hidden="true">
-                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-              </svg>
-              {" "}Based in Mumbai
-            </p>
             <div className="hero-ctas">
-              <a href="#contact" className="btn btn-primary">Get in Touch</a>
-              <a href="#portfolio" className="btn btn-secondary">View Work</a>
+              <a href="#portfolio" className="hero-unified-cta">
+                <span className="hero-unified-cta-label">View My Work</span>
+                <span className="hero-unified-cta-arrow" aria-hidden="true">
+                  <span></span>
+                </span>
+              </a>
             </div>
           </div>
 
@@ -117,7 +113,9 @@ export default function Home() {
         <div className="skills-visual-grid">
 
           <div className="skill-card fade-up">
-            <div className="skill-card-icon">◎</div>
+            <div className="skill-card-icon">
+              <img src="/tools.svg" alt="Strategy icon" width="24" height="24" />
+            </div>
             <div className="skill-card-title">Strategy &amp; Campaigns</div>
             <ul className="skill-card-list">
               <li>Brand &amp; GTM Strategy</li>
@@ -128,7 +126,9 @@ export default function Home() {
           </div>
 
           <div className="skill-card fade-up">
-            <div className="skill-card-icon">▲</div>
+            <div className="skill-card-icon">
+              <img src="/paid-media.svg" alt="Paid Media icon" width="24" height="24" />
+            </div>
             <div className="skill-card-title">Paid Media &amp; Analytics</div>
             <ul className="skill-card-list">
               <li>Meta &amp; TikTok Ads Manager</li>
@@ -139,7 +139,9 @@ export default function Home() {
           </div>
 
           <div className="skill-card fade-up">
-            <div className="skill-card-icon">✺</div>
+            <div className="skill-card-icon">
+              <img src="/influencer.svg" alt="Influencer icon" width="24" height="24" />
+            </div>
             <div className="skill-card-title">Influencer &amp; Content</div>
             <ul className="skill-card-list">
               <li>Influencer Sourcing &amp; Vetting</li>
@@ -150,7 +152,9 @@ export default function Home() {
           </div>
 
           <div className="skill-card fade-up">
-            <div className="skill-card-icon">◈</div>
+            <div className="skill-card-icon">
+              <img src="/ai.svg" alt="Tools icon" width="24" height="24" />
+            </div>
             <div className="skill-card-title">Tools &amp; AI</div>
             <ul className="skill-card-list">
               <li>Claude · ChatGPT · Midjourney</li>

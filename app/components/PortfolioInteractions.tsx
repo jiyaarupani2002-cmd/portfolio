@@ -12,9 +12,31 @@ export default function PortfolioInteractions() {
     const navLinksEl = document.getElementById("navLinks");
     const navBrand = document.querySelector<HTMLElement>(".nav-brand");
     const heroSection = document.getElementById("hero");
+    const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+    const interactiveSelector = "a, button, .btn, .hamburger, input, textarea, select, [role='button']";
 
     // Brand starts hidden — hero is visible on page load
     navBrand?.classList.add("hidden");
+
+    const handlePointerMove = (event: PointerEvent) => {
+      if (!finePointer) return;
+      document.documentElement.style.setProperty("--cursor-x", `${event.clientX}px`);
+      document.documentElement.style.setProperty("--cursor-y", `${event.clientY}px`);
+      document.documentElement.classList.add("custom-cursor-ready");
+    };
+
+    const handlePointerOver = (event: PointerEvent) => {
+      if (!finePointer) return;
+      const target = event.target instanceof Element ? event.target : null;
+      document.documentElement.classList.toggle(
+        "custom-cursor-hover",
+        Boolean(target?.closest(interactiveSelector))
+      );
+    };
+
+    const handlePointerLeaveWindow = () => {
+      document.documentElement.classList.remove("custom-cursor-ready", "custom-cursor-hover");
+    };
 
     const handleScroll = () => {
       const scrollY = window.scrollY;
@@ -40,6 +62,9 @@ export default function PortfolioInteractions() {
     const closeMenu = () => navLinksEl?.classList.remove("open");
 
     window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("pointermove", handlePointerMove, { passive: true });
+    window.addEventListener("pointerover", handlePointerOver, { passive: true });
+    document.documentElement.addEventListener("mouseleave", handlePointerLeaveWindow);
     hamburger?.addEventListener("click", handleMenuClick);
     navLinksEl?.querySelectorAll("a").forEach((link) => {
       link.addEventListener("click", closeMenu);
@@ -126,6 +151,10 @@ export default function PortfolioInteractions() {
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("pointermove", handlePointerMove);
+      window.removeEventListener("pointerover", handlePointerOver);
+      document.documentElement.removeEventListener("mouseleave", handlePointerLeaveWindow);
+      document.documentElement.classList.remove("custom-cursor-ready", "custom-cursor-hover");
       hamburger?.removeEventListener("click", handleMenuClick);
       navLinksEl?.querySelectorAll("a").forEach((link) => {
         link.removeEventListener("click", closeMenu);
@@ -140,5 +169,10 @@ export default function PortfolioInteractions() {
     };
   }, []);
 
-  return null;
+  return (
+    <>
+      <div className="custom-cursor-ring" aria-hidden="true" />
+      <div className="custom-cursor-dot" aria-hidden="true" />
+    </>
+  );
 }

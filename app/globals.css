@@ -27,6 +27,59 @@ body {
   overflow-x: hidden;
 }
 
+@media (hover: hover) and (pointer: fine) {
+  html,
+  html *,
+  html *::before,
+  html *::after {
+    cursor: none !important;
+  }
+
+  .custom-cursor-ring,
+  .custom-cursor-dot {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0;
+    transform: translate3d(calc(var(--cursor-x, 0px) - 50%), calc(var(--cursor-y, 0px) - 50%), 0);
+  }
+
+  .custom-cursor-ring {
+    width: 30px;
+    height: 30px;
+    border: 1px solid rgba(92,42,28,0.58);
+    transition:
+      transform 0.09s cubic-bezier(0.2, 0.8, 0.2, 1),
+      width 0.18s ease,
+      height 0.18s ease,
+      border-color 0.18s ease,
+      background-color 0.18s ease,
+      opacity 0.18s ease;
+  }
+
+  .custom-cursor-dot {
+    width: 7px;
+    height: 7px;
+    background: var(--burgundy-dark);
+    transition: opacity 0.18s ease;
+  }
+
+  html.custom-cursor-ready .custom-cursor-ring,
+  html.custom-cursor-ready .custom-cursor-dot {
+    opacity: 1;
+  }
+
+  html.custom-cursor-hover .custom-cursor-ring {
+    width: 38px;
+    height: 38px;
+    border-color: rgba(92,42,28,0.78);
+    background: rgba(123,59,42,0.07);
+  }
+}
+
 /* ── NAV ── */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
@@ -41,9 +94,9 @@ nav {
 nav.scrolled { box-shadow: 0 2px 24px rgba(107,39,55,0.10); }
 
 .nav-brand {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'DM Sans', sans-serif;
   font-size: 1.1rem;
-  font-weight: 600;
+  font-weight: 400;
   color: var(--burgundy);
   letter-spacing: 0.04em;
   text-decoration: none;
@@ -183,7 +236,79 @@ h1.hero-name em {
 .hero-location span { color: var(--gold); }
 
 .hero-ctas {
-  display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 4rem;
+  display: flex;
+  margin-bottom: 4rem;
+}
+
+.hero-unified-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.4rem;
+  min-width: min(100%, 310px);
+  padding: 1.05rem 1.25rem 1.05rem 1.55rem;
+  background: transparent;
+  border: 1.5px solid var(--burgundy);
+  border-radius: 2px;
+  color: var(--burgundy);
+  text-decoration: none;
+  box-shadow: none;
+  transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.hero-unified-cta:hover {
+  background: rgba(123,59,42,0.06);
+  border-color: var(--burgundy-dark);
+  color: var(--burgundy-dark);
+  box-shadow: 0 8px 26px rgba(92,42,28,0.12);
+  transform: translateY(-1px);
+}
+
+.hero-unified-cta-label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  line-height: 1;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.hero-unified-cta-arrow {
+  position: relative;
+  width: 52px;
+  height: 1px;
+  flex-shrink: 0;
+  transition: width 0.25s ease;
+}
+
+.hero-unified-cta-arrow span {
+  position: absolute;
+  inset: 0;
+  background: var(--burgundy);
+}
+
+.hero-unified-cta-arrow::before,
+.hero-unified-cta-arrow::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 8px;
+  height: 1px;
+  background: var(--burgundy);
+  transform-origin: right center;
+}
+
+.hero-unified-cta-arrow::before {
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.hero-unified-cta-arrow::after {
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+.hero-unified-cta:hover .hero-unified-cta-arrow {
+  width: 70px;
 }
 
 .btn {
@@ -412,15 +537,22 @@ h2.section-title {
   transform: translateY(-3px);
 }
 .skill-card-icon {
-  width: 48px; height: 48px;
-  border-radius: 50%;
-  background: rgba(123,59,42,0.08);
-  border: 1px solid rgba(123,59,42,0.14);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.15rem;
-  color: var(--burgundy);
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  background: transparent;
+  border: none;
+  display: flex; align-items: center; justify-content: flex-start;
   margin-bottom: 1.2rem;
   flex-shrink: 0;
+}
+.skill-card-icon img {
+  display: block;
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  clip-path: inset(0 0 20% 0);
+  filter: invert(19%) sepia(70%) saturate(550%) hue-rotate(330deg) brightness(90%) contrast(90%);
 }
 .skill-card-title {
   font-size: 0.72rem;
