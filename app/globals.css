@@ -222,7 +222,7 @@ h1.hero-name em {
   font-weight: 300;
   color: var(--mid);
   letter-spacing: 0.03em;
-  margin-bottom: 0.8rem;
+  margin-bottom: 2rem;
   line-height: 1.8;
 }
 
@@ -247,20 +247,20 @@ h1.hero-name em {
   gap: 1.4rem;
   min-width: min(100%, 310px);
   padding: 1.05rem 1.25rem 1.05rem 1.55rem;
-  background: transparent;
+  background: var(--burgundy);
   border: 1.5px solid var(--burgundy);
   border-radius: 2px;
-  color: var(--burgundy);
+  color: var(--cream);
   text-decoration: none;
   box-shadow: none;
   transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
 }
 
 .hero-unified-cta:hover {
-  background: rgba(123,59,42,0.06);
+  background: var(--burgundy-dark);
   border-color: var(--burgundy-dark);
-  color: var(--burgundy-dark);
-  box-shadow: 0 8px 26px rgba(92,42,28,0.12);
+  color: var(--cream);
+  box-shadow: 0 8px 26px rgba(92,42,28,0.25);
   transform: translateY(-1px);
 }
 
@@ -284,7 +284,7 @@ h1.hero-name em {
 .hero-unified-cta-arrow span {
   position: absolute;
   inset: 0;
-  background: var(--burgundy);
+  background: var(--cream);
 }
 
 .hero-unified-cta-arrow::before,
@@ -295,7 +295,7 @@ h1.hero-name em {
   top: 50%;
   width: 8px;
   height: 1px;
-  background: var(--burgundy);
+  background: var(--cream);
   transform-origin: right center;
 }
 
@@ -536,6 +536,14 @@ h2.section-title {
   box-shadow: var(--shadow);
   transform: translateY(-3px);
 }
+.skill-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
 .skill-card-icon {
   width: auto;
   height: auto;
@@ -543,13 +551,12 @@ h2.section-title {
   background: transparent;
   border: none;
   display: flex; align-items: center; justify-content: flex-start;
-  margin-bottom: 1.2rem;
   flex-shrink: 0;
 }
 .skill-card-icon img {
   display: block;
-  width: 36px;
-  height: 36px;
+  width: 28px;
+  height: 28px;
   object-fit: contain;
   clip-path: inset(0 0 20% 0);
   filter: invert(19%) sepia(70%) saturate(550%) hue-rotate(330deg) brightness(90%) contrast(90%);
@@ -560,12 +567,11 @@ h2.section-title {
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--burgundy);
-  margin-bottom: 1rem;
-  padding-bottom: 0.75rem;
-  border-bottom: 1px solid var(--border);
+  line-height: 1.3;
 }
 .skill-card-list {
-  list-style: none;
+  list-style: disc;
+  padding-left: 1.1rem;
   display: flex;
   flex-direction: column;
   gap: 0.55rem;
@@ -574,16 +580,9 @@ h2.section-title {
   font-size: 0.84rem;
   color: var(--mid);
   line-height: 1.5;
-  padding-left: 1.1rem;
-  position: relative;
 }
-.skill-card-list li::before {
-  content: '—';
-  position: absolute;
-  left: 0;
+.skill-card-list li::marker {
   color: var(--gold);
-  font-size: 0.68rem;
-  top: 0.1rem;
 }
 .skills-languages-row {
   display: grid;
@@ -754,10 +753,10 @@ h2.section-title {
 .portfolio-img img.img-hayday { object-position: center 12%; }
 .portfolio-img img.img-cb { object-position: center 8%; }
 
-/* Tags overlaid at top-left of image */
+/* Tags overlaid at bottom-left of image */
 .portfolio-tags {
   position: absolute;
-  top: 0.65rem;
+  bottom: 0.65rem;
   left: 0.7rem;
   z-index: 4;
   display: flex;
@@ -998,7 +997,7 @@ h2.section-title {
 footer {
   background: var(--charcoal);
   padding: 2.4rem 6vw;
-  display: flex; align-items: center; justify-content: space-between;
+  display: flex; align-items: center; justify-content: flex-start;
   flex-wrap: wrap; gap: 1rem;
 }
 .footer-name {

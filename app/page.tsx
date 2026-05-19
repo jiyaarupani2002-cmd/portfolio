@@ -33,8 +33,7 @@ export default function Home() {
           <div className="hero-left">
             <h1 className="hero-name">Jiyaa<br /><em>Rupani</em></h1>
             <p className="hero-tagline">
-              Senior Account Manager &nbsp;·&nbsp; Global Marketing Strategist<br />
-              Influencer &amp; Paid Media Expert
+              Senior Account Manager &nbsp;·&nbsp; Global Marketing Strategist &nbsp;·&nbsp; Influencer &amp; Paid Media Expert
             </p>
             <div className="hero-ctas">
               <a href="#portfolio" className="hero-unified-cta">
@@ -67,12 +66,12 @@ export default function Home() {
               <div className="about-detail-val">Spanish</div>
             </div>
             <div className="about-detail">
-              <div className="about-detail-label">Based In</div>
-              <div className="about-detail-val">Mumbai, India</div>
-            </div>
-            <div className="about-detail">
               <div className="about-detail-label">Education</div>
               <div className="about-detail-val">BSc Intl Business &amp; Marketing, Leeds</div>
+            </div>
+            <div className="about-detail">
+              <div className="about-detail-label">Location</div>
+              <div className="about-detail-val">Open to Relocate</div>
             </div>
             <div className="about-detail">
               <div className="about-detail-label">Languages</div>
@@ -270,10 +269,12 @@ export default function Home() {
         <div className="skills-visual-grid">
 
           <div className="skill-card fade-up">
-            <div className="skill-card-icon">
-              <img src="/tools.svg" alt="Strategy icon" width="24" height="24" />
+            <div className="skill-card-header">
+              <div className="skill-card-icon">
+                <img src="/tools.svg" alt="Strategy icon" width="24" height="24" />
+              </div>
+              <div className="skill-card-title">Strategy &amp; Campaigns</div>
             </div>
-            <div className="skill-card-title">Strategy &amp; Campaigns</div>
             <ul className="skill-card-list">
               <li>Brand &amp; GTM Strategy</li>
               <li>Campaign Planning</li>
@@ -283,10 +284,12 @@ export default function Home() {
           </div>
 
           <div className="skill-card fade-up">
-            <div className="skill-card-icon">
-              <img src="/paid-media.svg" alt="Paid Media icon" width="24" height="24" />
+            <div className="skill-card-header">
+              <div className="skill-card-icon">
+                <img src="/paid-media.svg" alt="Paid Media icon" width="24" height="24" />
+              </div>
+              <div className="skill-card-title">Paid Media &amp; Analytics</div>
             </div>
-            <div className="skill-card-title">Paid Media &amp; Analytics</div>
             <ul className="skill-card-list">
               <li>Meta &amp; TikTok Ads Manager</li>
               <li>Google Ads · GA4</li>
@@ -296,10 +299,12 @@ export default function Home() {
           </div>
 
           <div className="skill-card fade-up">
-            <div className="skill-card-icon">
-              <img src="/influencer.svg" alt="Influencer icon" width="24" height="24" />
+            <div className="skill-card-header">
+              <div className="skill-card-icon">
+                <img src="/influencer.svg" alt="Influencer icon" width="24" height="24" />
+              </div>
+              <div className="skill-card-title">Influencer &amp; Content</div>
             </div>
-            <div className="skill-card-title">Influencer &amp; Content</div>
             <ul className="skill-card-list">
               <li>Influencer Sourcing &amp; Vetting</li>
               <li>Creator Negotiations</li>
@@ -309,10 +314,12 @@ export default function Home() {
           </div>
 
           <div className="skill-card fade-up">
-            <div className="skill-card-icon">
-              <img src="/ai.svg" alt="Tools icon" width="24" height="24" />
+            <div className="skill-card-header">
+              <div className="skill-card-icon">
+                <img src="/ai.svg" alt="Tools icon" width="24" height="24" />
+              </div>
+              <div className="skill-card-title">Tools &amp; AI</div>
             </div>
-            <div className="skill-card-title">Tools &amp; AI</div>
             <ul className="skill-card-list">
               <li>Claude · ChatGPT · Midjourney</li>
               <li>Canva · Adobe Creative Suite</li>
@@ -471,11 +478,7 @@ export default function Home() {
 
       {/* FOOTER */}
       <footer>
-        <div>
-          <div className="footer-name">Jiyaa <span>Rupani</span></div>
-          <div className="footer-tagline">Senior Account Manager · Global Marketing Strategist · Influencer &amp; Paid Media Expert</div>
-        </div>
-        <div className="footer-copy">© 2025 Jiyaa Rupani. All rights reserved.</div>
+        <div className="footer-copy">© 2025 All rights reserved.</div>
       </footer>
       <PortfolioInteractions />
     </>
