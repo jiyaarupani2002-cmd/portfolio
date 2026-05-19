@@ -103,6 +103,163 @@ export default function Home() {
         </div>
       </section>
 
+      {/* PORTFOLIO */}
+      <section id="portfolio">
+        <div className="section-header fade-up">
+          <div className="section-label">Work</div>
+          <h2 className="section-title">Selected Projects</h2>
+          <p className="section-subtitle">A curated selection of campaigns, launches, and activations from global markets.</p>
+        </div>
+        <div className="portfolio-grid">
+
+          <div className="portfolio-card fade-up card-reel">
+            <div className="portfolio-img">
+              <img src="/hayday.jpg" alt="Supercell Hay Day Activation" className="img-hayday" />
+              <video src="/hd.mp4" muted loop playsInline preload="none" />
+              <div className="portfolio-tags">
+                <span className="portfolio-tag">Experiential</span>
+                <span className="portfolio-tag">Gaming</span>
+                <span className="portfolio-tag">Influencer</span>
+              </div>
+            </div>
+            <div className="portfolio-body">
+              <div className="portfolio-title">Supercell Hay Day Activation</div>
+              <div className="portfolio-desc">In-person gaming event driving 3,000+ installs in 2 days and a 135% lift in social media engagement. End-to-end event concept, creator briefing, and live execution.</div>
+            </div>
+          </div>
+
+          <div className="portfolio-card fade-up card-reel">
+            <div className="portfolio-img">
+              <img src="/cb-photo.png" alt="CurrentBody India Launch" className="img-cb" />
+              <video src="/cb-video.mp4" muted loop playsInline preload="none" />
+              <div className="portfolio-tags">
+                <span className="portfolio-tag">Influencer Marketing</span>
+                <span className="portfolio-tag">Launch Strategy</span>
+                <span className="portfolio-tag">SEO</span>
+              </div>
+            </div>
+            <div className="portfolio-body">
+              <div className="portfolio-title">CurrentBody India Launch</div>
+              <div className="portfolio-desc">Full-funnel market entry strategy for brand's first India launch. 100+ influencers onboarded in month one, 15K sign-ups generated, 150% website traffic growth.</div>
+            </div>
+          </div>
+
+          <div className="portfolio-card fade-up card-landscape">
+            <div className="portfolio-img">
+              <img src="/amazon.png" alt="Amazon Fashion EU TikTok Campaign" className="img-top" />
+              <div className="portfolio-tags">
+                <span className="portfolio-tag">Paid Social</span>
+                <span className="portfolio-tag">TikTok Ads</span>
+                <span className="portfolio-tag">GTM</span>
+              </div>
+            </div>
+            <div className="portfolio-body">
+              <div className="portfolio-title">Amazon Fashion EU TikTok Campaign</div>
+              <div className="portfolio-desc">GTM planning and end-to-end paid ad management for Amazon Fashion EU's global TikTok launch across 4 countries, with 1,000+ creatives deployed.</div>
+            </div>
+          </div>
+
+          <div className="portfolio-card fade-up card-landscape">
+            <div className="portfolio-img">
+              <img src="/aiup.png" alt="Black Friday Spain Influencer Scale" />
+              <div className="portfolio-tags">
+                <span className="portfolio-tag">Influencer</span>
+                <span className="portfolio-tag">Performance Marketing</span>
+                <span className="portfolio-tag">Meta Ads</span>
+              </div>
+            </div>
+            <div className="portfolio-body">
+              <div className="portfolio-title">Black Friday Spain Influencer Scale</div>
+              <div className="portfolio-desc">Coordinated 500+ creators across the Spanish market for Black Friday, delivering 250% year-on-year revenue growth through precision targeting and creator strategy.</div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* EXPERIENCE */}
+      <section id="experience">
+        <div className="section-header fade-up">
+          <div className="section-label">Career</div>
+          <h2 className="section-title">Work Experience</h2>
+          <p className="section-subtitle">Four years of results-driven marketing across global agencies, tech giants, and fast-growth brands.</p>
+        </div>
+        <div className="timeline">
+
+          <div className="timeline-item">
+            <div className="timeline-dot"></div>
+            <div className="timeline-card">
+              <div className="timeline-header">
+                <div>
+                  <div className="timeline-role">Senior Account Manager</div>
+                  <div className="timeline-company">Media Bodies — UK</div>
+                </div>
+                <div className="timeline-period">Feb 2025 — Present</div>
+              </div>
+              <ul className="timeline-list">
+                <li>Led end-to-end account management for <strong>$5M+ annual influencer &amp; media campaigns</strong> across global markets</li>
+                <li>Drove <strong>125% increase in client spend</strong> through data-backed solutions for BetterHelp, monday.com, Air Up, NordVPN &amp; FOREO</li>
+                <li>Designed in-person activation for Supercell's Hay Day → <strong>3,000+ installs in 2 days</strong> &amp; 135% social media engagement growth</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="timeline-item">
+            <div className="timeline-dot"></div>
+            <div className="timeline-card">
+              <div className="timeline-header">
+                <div>
+                  <div className="timeline-role">Partnerships Executive</div>
+                  <div className="timeline-company">The Beauty Tech Group — UK</div>
+                </div>
+                <div className="timeline-period">Aug 2024 — Feb 2025</div>
+              </div>
+              <ul className="timeline-list">
+                <li>Led CurrentBody's <strong>first-ever India market entry</strong>; onboarded 100+ influencers in month one → 150% website traffic increase &amp; 210% growth in social media inquiries</li>
+                <li>Generated <strong>15,000+ product sign-ups</strong> in the first month via full-funnel launch strategy</li>
+                <li>Scaled Spanish market influencer program with <strong>500+ creators during Black Friday</strong> → 250% revenue growth YoY</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="timeline-item">
+            <div className="timeline-dot"></div>
+            <div className="timeline-card">
+              <div className="timeline-header">
+                <div>
+                  <div className="timeline-role">Social Media Coordinator</div>
+                  <div className="timeline-company">Vision Media Works — Leeds</div>
+                </div>
+                <div className="timeline-period">Sep 2023 — Aug 2024</div>
+              </div>
+              <ul className="timeline-list">
+                <li>Drove <strong>160% increase in social media traction</strong> by redefining content with a Gen Z lens</li>
+                <li>Boosted visibility by <strong>70% across three client accounts</strong> through performance-led content optimisation</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="timeline-item">
+            <div className="timeline-dot"></div>
+            <div className="timeline-card">
+              <div className="timeline-header">
+                <div>
+                  <div className="timeline-role">Marketing Specialist (Placement)</div>
+                  <div className="timeline-company">Amazon — London HQ</div>
+                </div>
+                <div className="timeline-period">Jul 2022 — Jul 2023</div>
+              </div>
+              <ul className="timeline-list">
+                <li>Launched <strong>1,000+ paid social ads across 4 countries</strong> for Amazon Fashion EU</li>
+                <li>Led GTM planning for Amazon Fashion EU's TikTok campaign including end-to-end paid ad management</li>
+                <li>Increased offshored work hours by 90% and delivered <strong>67% team productivity improvement</strong> in 11 months</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
       {/* SKILLS — visual 4-card layout */}
       <section id="skills">
         <div className="section-header fade-up">
@@ -190,163 +347,6 @@ export default function Home() {
               <div className="lang-level">Upper Intermediate</div>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* EXPERIENCE */}
-      <section id="experience">
-        <div className="section-header fade-up">
-          <div className="section-label">Career</div>
-          <h2 className="section-title">Work Experience</h2>
-          <p className="section-subtitle">Four years of results-driven marketing across global agencies, tech giants, and fast-growth brands.</p>
-        </div>
-        <div className="timeline">
-
-          <div className="timeline-item">
-            <div className="timeline-dot"></div>
-            <div className="timeline-card">
-              <div className="timeline-header">
-                <div>
-                  <div className="timeline-role">Senior Account Manager</div>
-                  <div className="timeline-company">Media Bodies — UK</div>
-                </div>
-                <div className="timeline-period">Feb 2025 — Present</div>
-              </div>
-              <ul className="timeline-list">
-                <li>Led end-to-end account management for <strong>$5M+ annual influencer &amp; media campaigns</strong> across global markets</li>
-                <li>Drove <strong>125% increase in client spend</strong> through data-backed solutions for BetterHelp, monday.com, Air Up, NordVPN &amp; FOREO</li>
-                <li>Designed in-person activation for Supercell's Hay Day → <strong>3,000+ installs in 2 days</strong> &amp; 135% social media engagement growth</li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="timeline-item">
-            <div className="timeline-dot"></div>
-            <div className="timeline-card">
-              <div className="timeline-header">
-                <div>
-                  <div className="timeline-role">Partnerships Executive</div>
-                  <div className="timeline-company">The Beauty Tech Group — UK</div>
-                </div>
-                <div className="timeline-period">Aug 2024 — Feb 2025</div>
-              </div>
-              <ul className="timeline-list">
-                <li>Led CurrentBody's <strong>first-ever India market entry</strong>; onboarded 100+ influencers in month one → 150% website traffic increase &amp; 210% growth in social media inquiries</li>
-                <li>Generated <strong>15,000+ product sign-ups</strong> in the first month via full-funnel launch strategy</li>
-                <li>Scaled Spanish market influencer program with <strong>500+ creators during Black Friday</strong> → 250% revenue growth YoY</li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="timeline-item">
-            <div className="timeline-dot"></div>
-            <div className="timeline-card">
-              <div className="timeline-header">
-                <div>
-                  <div className="timeline-role">Social Media Coordinator</div>
-                  <div className="timeline-company">Vision Media Works — Leeds</div>
-                </div>
-                <div className="timeline-period">Sep 2023 — Aug 2024</div>
-              </div>
-              <ul className="timeline-list">
-                <li>Drove <strong>160% increase in social media traction</strong> by redefining content with a Gen Z lens</li>
-                <li>Boosted visibility by <strong>70% across three client accounts</strong> through performance-led content optimisation</li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="timeline-item">
-            <div className="timeline-dot"></div>
-            <div className="timeline-card">
-              <div className="timeline-header">
-                <div>
-                  <div className="timeline-role">Marketing Specialist (Placement)</div>
-                  <div className="timeline-company">Amazon — London HQ</div>
-                </div>
-                <div className="timeline-period">Jul 2022 — Jul 2023</div>
-              </div>
-              <ul className="timeline-list">
-                <li>Launched <strong>1,000+ paid social ads across 4 countries</strong> for Amazon Fashion EU</li>
-                <li>Led GTM planning for Amazon Fashion EU's TikTok campaign including end-to-end paid ad management</li>
-                <li>Increased offshored work hours by 90% and delivered <strong>67% team productivity improvement</strong> in 11 months</li>
-              </ul>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      {/* PORTFOLIO */}
-      <section id="portfolio">
-        <div className="section-header fade-up">
-          <div className="section-label">Work</div>
-          <h2 className="section-title">Selected Projects</h2>
-          <p className="section-subtitle">A curated selection of campaigns, launches, and activations from global markets.</p>
-        </div>
-        <div className="portfolio-grid">
-
-          <div className="portfolio-card fade-up card-reel">
-            <div className="portfolio-img">
-              <img src="/hayday.jpg" alt="Supercell Hay Day Activation" className="img-hayday" />
-              <video src="/hd.mp4" muted loop playsInline preload="none" />
-              <div className="portfolio-tags">
-                <span className="portfolio-tag">Experiential</span>
-                <span className="portfolio-tag">Gaming</span>
-                <span className="portfolio-tag">Influencer</span>
-              </div>
-            </div>
-            <div className="portfolio-body">
-              <div className="portfolio-title">Supercell Hay Day Activation</div>
-              <div className="portfolio-desc">In-person gaming event driving 3,000+ installs in 2 days and a 135% lift in social media engagement. End-to-end event concept, creator briefing, and live execution.</div>
-            </div>
-          </div>
-
-          <div className="portfolio-card fade-up card-reel">
-            <div className="portfolio-img">
-              <img src="/cb-photo.png" alt="CurrentBody India Launch" className="img-cb" />
-              <video src="/cb-video.mp4" muted loop playsInline preload="none" />
-              <div className="portfolio-tags">
-                <span className="portfolio-tag">Influencer Marketing</span>
-                <span className="portfolio-tag">Launch Strategy</span>
-                <span className="portfolio-tag">SEO</span>
-              </div>
-            </div>
-            <div className="portfolio-body">
-              <div className="portfolio-title">CurrentBody India Launch</div>
-              <div className="portfolio-desc">Full-funnel market entry strategy for brand's first India launch. 100+ influencers onboarded in month one, 15K sign-ups generated, 150% website traffic growth.</div>
-            </div>
-          </div>
-
-          <div className="portfolio-card fade-up card-landscape">
-            <div className="portfolio-img">
-              <img src="/amazon.png" alt="Amazon Fashion EU TikTok Campaign" className="img-top" />
-              <div className="portfolio-tags">
-                <span className="portfolio-tag">Paid Social</span>
-                <span className="portfolio-tag">TikTok Ads</span>
-                <span className="portfolio-tag">GTM</span>
-              </div>
-            </div>
-            <div className="portfolio-body">
-              <div className="portfolio-title">Amazon Fashion EU TikTok Campaign</div>
-              <div className="portfolio-desc">GTM planning and end-to-end paid ad management for Amazon Fashion EU's global TikTok launch across 4 countries, with 1,000+ creatives deployed.</div>
-            </div>
-          </div>
-
-          <div className="portfolio-card fade-up card-landscape">
-            <div className="portfolio-img">
-              <img src="/aiup.png" alt="Black Friday Spain Influencer Scale" />
-              <div className="portfolio-tags">
-                <span className="portfolio-tag">Influencer</span>
-                <span className="portfolio-tag">Performance Marketing</span>
-                <span className="portfolio-tag">Meta Ads</span>
-              </div>
-            </div>
-            <div className="portfolio-body">
-              <div className="portfolio-title">Black Friday Spain Influencer Scale</div>
-              <div className="portfolio-desc">Coordinated 500+ creators across the Spanish market for Black Friday, delivering 250% year-on-year revenue growth through precision targeting and creator strategy.</div>
-            </div>
-          </div>
-
         </div>
       </section>
 
