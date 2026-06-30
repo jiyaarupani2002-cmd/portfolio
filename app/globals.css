@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
 
 :root {
   --burgundy: #7B3B2A;
@@ -242,74 +242,78 @@ h1.hero-name em {
 
 .hero-unified-cta {
   display: inline-flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1.4rem;
-  min-width: min(100%, 310px);
-  padding: 1.05rem 1.25rem 1.05rem 1.55rem;
-  background: var(--burgundy);
-  border: 1.5px solid var(--burgundy);
+  align-items: stretch;
+  min-width: min(100%, 340px);
+  border: 2px solid var(--burgundy);
   border-radius: 2px;
-  color: var(--cream);
   text-decoration: none;
+  overflow: hidden;
   box-shadow: none;
-  transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+  transition: box-shadow 0.28s ease, transform 0.28s ease, border-color 0.28s ease;
 }
 
 .hero-unified-cta:hover {
-  background: var(--burgundy-dark);
   border-color: var(--burgundy-dark);
-  color: var(--cream);
   box-shadow: 0 8px 26px rgba(92,42,28,0.25);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
 }
 
 .hero-unified-cta-label {
-  font-size: 0.82rem;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 1.25rem 1.5rem 1.25rem 1.8rem;
+  background: var(--cream);
+  color: var(--burgundy);
+  font-size: 0.88rem;
   font-weight: 700;
   letter-spacing: 0.14em;
   line-height: 1;
   text-transform: uppercase;
   white-space: nowrap;
+  transition: background 0.28s ease;
+}
+
+.hero-unified-cta:hover .hero-unified-cta-label {
+  background: #f0ebe4;
 }
 
 .hero-unified-cta-arrow {
-  position: relative;
-  width: 52px;
-  height: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  width: 58px;
   flex-shrink: 0;
-  transition: width 0.25s ease;
-}
-
-.hero-unified-cta-arrow span {
-  position: absolute;
-  inset: 0;
-  background: var(--cream);
-}
-
-.hero-unified-cta-arrow::before,
-.hero-unified-cta-arrow::after {
-  content: '';
-  position: absolute;
-  right: 0;
-  top: 50%;
-  width: 8px;
-  height: 1px;
-  background: var(--cream);
-  transform-origin: right center;
-}
-
-.hero-unified-cta-arrow::before {
-  transform: translateY(-50%) rotate(45deg);
-}
-
-.hero-unified-cta-arrow::after {
-  transform: translateY(-50%) rotate(-45deg);
+  background: var(--burgundy);
+  transition: width 0.28s ease, background 0.28s ease;
 }
 
 .hero-unified-cta:hover .hero-unified-cta-arrow {
-  width: 70px;
+  width: 58px;
+  background: var(--burgundy-dark);
 }
+
+.hero-unified-cta-arrow-stem {
+  height: 3px;
+  width: 10px;
+  background: var(--cream);
+  flex-shrink: 0;
+  transition: width 0.28s ease;
+}
+
+.hero-unified-cta:hover .hero-unified-cta-arrow-stem {
+  width: 22px;
+}
+
+.hero-unified-cta-arrow-chevron {
+  display: block;
+  width: 11px;
+  height: 14px;
+  color: var(--cream);
+  flex-shrink: 0;
+}
+
 
 .btn {
   display: inline-block;
@@ -382,13 +386,12 @@ section { padding: 100px 6vw; }
   content: ''; display: block; width: 24px; height: 1px; background: var(--gold);
 }
 h2.section-title {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 600;
+  font-weight: 700;
   color: var(--burgundy-dark);
   line-height: 1.1;
-  letter-spacing: -0.01em;
-  font-feature-settings: "liga" 1, "kern" 1;
+  letter-spacing: -0.02em;
 }
 .section-subtitle {
   margin-top: 0.8rem;
@@ -562,6 +565,7 @@ h2.section-title {
   filter: invert(19%) sepia(70%) saturate(550%) hue-rotate(330deg) brightness(90%) contrast(90%);
 }
 .skill-card-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.14em;
@@ -591,19 +595,56 @@ h2.section-title {
   margin-top: 1.6rem;
 }
 .lang-item {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 0.85rem;
-  padding: 1rem 1.2rem;
+  padding: 1rem 1.2rem 1rem 1.5rem;
   background: var(--warm-white);
   border: 1px solid var(--border);
-  border-left: 2px solid var(--gold);
+  border-left: none;
   border-radius: 2px;
+  overflow: hidden;
   transition: box-shadow 0.2s, transform 0.2s;
+}
+.lang-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 5px;
 }
 .lang-item:hover {
   box-shadow: var(--shadow);
   transform: translateY(-2px);
+}
+
+/* UK flag: diagonal repeating blue/white/red checker suggesting Union Jack */
+.lang-english::before {
+  background: repeating-linear-gradient(
+    45deg,
+    #012169 0px,
+    #012169 2px,
+    #FFFFFF 2px,
+    #FFFFFF 4px,
+    #CF142B 4px,
+    #CF142B 6px,
+    #FFFFFF 6px,
+    #FFFFFF 8px
+  );
+}
+/* Spain flag: red, yellow, red vertical stripes */
+.lang-spanish::before {
+  background: linear-gradient(to bottom, #AA151B 25%, #F1BF00 25%, #F1BF00 75%, #AA151B 75%);
+}
+/* India flag: saffron, white, green vertical stripes */
+.lang-hindi::before {
+  background: linear-gradient(to bottom, #FF9933 33.3%, #FFFFFF 33.3%, #FFFFFF 66.6%, #138808 66.6%);
+}
+/* France flag: blue, white, red vertical stripes */
+.lang-french::before {
+  background: linear-gradient(to bottom, #002395 33.3%, #FFFFFF 33.3%, #FFFFFF 66.6%, #ED2939 66.6%);
 }
 .lang-name {
   font-size: 0.86rem;
@@ -659,8 +700,8 @@ h2.section-title {
   margin-bottom: 1.1rem;
 }
 .timeline-role {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.3rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.15rem;
   font-weight: 700;
   color: var(--burgundy-dark);
   line-height: 1.2;
@@ -784,8 +825,8 @@ h2.section-title {
   border-top: 1px solid var(--border);
 }
 .portfolio-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 0.95rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.88rem;
   font-weight: 700;
   color: var(--burgundy-dark);
   margin-bottom: 0.2rem;
@@ -869,8 +910,8 @@ h2.section-title {
 .edu-year-sep { width: 1px; height: 28px; background: var(--border); }
 .edu-year.end { color: var(--muted); }
 .edu-institution {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.5rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.35rem;
   font-weight: 700;
   color: var(--burgundy-dark);
   line-height: 1.2;

@@ -39,7 +39,10 @@ export default function Home() {
               <a href="#portfolio" className="hero-unified-cta">
                 <span className="hero-unified-cta-label">View My Work</span>
                 <span className="hero-unified-cta-arrow" aria-hidden="true">
-                  <span></span>
+                  <span className="hero-unified-cta-arrow-stem"></span>
+                  <svg viewBox="0 0 10 14" fill="currentColor" xmlns="http://www.w3.org/2000/svg" className="hero-unified-cta-arrow-chevron">
+                    <path d="M0 0 L10 7 L0 14 Z"/>
+                  </svg>
                 </span>
               </a>
             </div>
@@ -75,7 +78,7 @@ export default function Home() {
             </div>
             <div className="about-detail">
               <div className="about-detail-label">Languages</div>
-              <div className="about-detail-val">English · Spanish · Hindi · French</div>
+              <div className="about-detail-val">English · Español · हिन्दी · Français</div>
             </div>
           </div>
 
@@ -330,27 +333,27 @@ export default function Home() {
 
         </div>
         <div className="skills-languages-row">
-          <div className="lang-item">
+          <div className="lang-item lang-english">
             <div>
               <div className="lang-name">English</div>
               <div className="lang-level">Native</div>
             </div>
           </div>
-          <div className="lang-item">
+          <div className="lang-item lang-spanish">
             <div>
-              <div className="lang-name">Spanish</div>
+              <div className="lang-name">Español</div>
               <div className="lang-level">Native</div>
             </div>
           </div>
-          <div className="lang-item">
+          <div className="lang-item lang-hindi">
             <div>
-              <div className="lang-name">Hindi</div>
+              <div className="lang-name">हिन्दी</div>
               <div className="lang-level">Native</div>
             </div>
           </div>
-          <div className="lang-item">
+          <div className="lang-item lang-french">
             <div>
-              <div className="lang-name">French</div>
+              <div className="lang-name">Français</div>
               <div className="lang-level">Upper Intermediate</div>
             </div>
           </div>
@@ -478,7 +481,7 @@ export default function Home() {
 
       {/* FOOTER */}
       <footer>
-        <div className="footer-copy">© 2025 All rights reserved.</div>
+        <div className="footer-copy">© 2026 All rights reserved.</div>
       </footer>
       <PortfolioInteractions />
     </>
