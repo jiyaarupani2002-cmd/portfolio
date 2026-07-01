@@ -1,4 +1,5 @@
 import PortfolioInteractions from "./components/PortfolioInteractions";
+import AnimatedStat from "./components/AnimatedStat";
 import { PROFILE_IMAGE } from "./constants/profileImage";
 
 export default function Home() {
@@ -85,19 +86,19 @@ export default function Home() {
           {/* STATS — full-width bottom row */}
           <div className="hero-stats">
             <div className="stat">
-              <div className="stat-num">$<span className="counter" data-target="5" data-suffix="M+">0</span></div>
+              <div className="stat-num"><AnimatedStat prefix="$" target={5} suffix="M+" /></div>
               <div className="stat-label">Campaigns Managed</div>
             </div>
             <div className="stat">
-              <div className="stat-num"><span className="counter" data-target="25" data-suffix="+">0</span></div>
+              <div className="stat-num"><AnimatedStat target={25} suffix="+" /></div>
               <div className="stat-label">Campaigns Led</div>
             </div>
             <div className="stat">
-              <div className="stat-num"><span className="counter" data-target="125" data-suffix="%">0</span></div>
+              <div className="stat-num"><AnimatedStat target={125} suffix="%" /></div>
               <div className="stat-label">Avg Client Spend Growth</div>
             </div>
             <div className="stat">
-              <div className="stat-num"><span className="counter" data-target="250" data-suffix="%">0</span></div>
+              <div className="stat-num"><AnimatedStat target={250} suffix="%" /></div>
               <div className="stat-label">Reach Growth in 60 Days</div>
             </div>
           </div>
@@ -362,35 +363,51 @@ export default function Home() {
 
       {/* ACHIEVEMENTS */}
       <section id="achievements">
-        <div className="achievements-strip">
+        <div className="achievements-grid">
+
           <div className="achievement-item">
-            <div className="achievement-icon">✦</div>
-            <div className="achievement-text">
-              <strong>First Class Honours</strong>
-              <span>University of Leeds — BSc International Business &amp; Marketing</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="16" height="16" aria-hidden="true" className="achievement-icon">
+              <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+            </svg>
+            <div>
+              <div className="achievement-metric">First Class Honours</div>
+              <div className="achievement-sub">BSc Business &amp; Marketing, Leeds</div>
             </div>
           </div>
+
           <div className="achievement-item">
-            <div className="achievement-icon">◉</div>
-            <div className="achievement-text">
-              <strong>4+ Years Global Reach</strong>
-              <span>USA · UK · Europe · Asia</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="16" height="16" aria-hidden="true" className="achievement-icon">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+            <div>
+              <div className="achievement-metric">4+ Years Global Reach</div>
+              <div className="achievement-sub">USA · UK · Europe · Asia</div>
             </div>
           </div>
+
           <div className="achievement-item">
-            <div className="achievement-icon">↗</div>
-            <div className="achievement-text">
-              <strong>$5M+ Campaigns Managed</strong>
-              <span>Across influencer, paid media &amp; brand partnerships</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="16" height="16" aria-hidden="true" className="achievement-icon">
+              <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/>
+              <polyline points="16 7 22 7 22 13"/>
+            </svg>
+            <div>
+              <div className="achievement-metric">$5M+ Campaigns Managed</div>
+              <div className="achievement-sub">Influencer, paid media &amp; partnerships</div>
             </div>
           </div>
+
           <div className="achievement-item">
-            <div className="achievement-icon">◆</div>
-            <div className="achievement-text">
-              <strong>President, Consulting Society</strong>
-              <span>EY · Deloitte · L'Oréal sponsorships secured</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" width="16" height="16" aria-hidden="true" className="achievement-icon">
+              <circle cx="12" cy="8" r="6"/>
+              <path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/>
+            </svg>
+            <div>
+              <div className="achievement-metric">President, Consulting Society</div>
+              <div className="achievement-sub">EY · Deloitte · L&apos;Oréal</div>
             </div>
           </div>
+
         </div>
       </section>
 
@@ -420,14 +437,14 @@ export default function Home() {
 
       {/* CONTACT */}
       <section id="contact">
+        <div className="section-header fade-up" style={{ marginBottom: '3rem' }}>
+          <div className="section-label">Contact</div>
+          <h2 className="section-title">Let&apos;s build something great</h2>
+        </div>
         <div className="contact-wrapper">
 
           {/* LEFT: intro */}
           <div>
-            <div className="section-header fade-up">
-              <div className="section-label">Contact</div>
-              <h2 className="section-title">Let&apos;s build something great</h2>
-            </div>
             <p className="contact-tagline">&ldquo;Strategy without creativity is just a spreadsheet.&rdquo;</p>
             <p className="contact-note">Whether you&apos;re launching into a new market, scaling an influencer programme, or looking for a strategic partner who speaks performance — I&apos;d love to hear from you.</p>
           </div>

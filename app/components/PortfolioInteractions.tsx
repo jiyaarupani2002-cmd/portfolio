@@ -82,38 +82,6 @@ export default function PortfolioInteractions() {
       heroObserver.observe(heroSection);
     }
 
-    // Counter animation
-    let countersStarted = false;
-    const counters = Array.from(document.querySelectorAll<HTMLElement>(".counter"));
-    const animateCounter = (el: HTMLElement) => {
-      const target = Number.parseFloat(el.dataset.target ?? "0");
-      const suffix = el.dataset.suffix ?? "";
-      const duration = 1800;
-      const start = performance.now();
-      const isDecimal = target % 1 !== 0;
-
-      const step = (timestamp: number) => {
-        const elapsed = timestamp - start;
-        const progressValue = Math.min(elapsed / duration, 1);
-        const eased = 1 - Math.pow(1 - progressValue, 3);
-        const current = eased * target;
-        el.textContent = `${isDecimal ? current.toFixed(1) : Math.floor(current)}${suffix}`;
-        if (progressValue < 1) requestAnimationFrame(step);
-      };
-
-      requestAnimationFrame(step);
-    };
-
-    const counterObserver = new IntersectionObserver(
-      (entries) => {
-        if (entries.some((entry) => entry.isIntersecting) && !countersStarted) {
-          countersStarted = true;
-          counters.forEach(animateCounter);
-        }
-      },
-      { threshold: 0.5 }
-    );
-    counters.forEach((counter) => counterObserver.observe(counter));
 
     const revealObserver = new IntersectionObserver(
       (entries) => {
@@ -160,7 +128,6 @@ export default function PortfolioInteractions() {
         link.removeEventListener("click", closeMenu);
       });
       heroObserver?.disconnect();
-      counterObserver.disconnect();
       revealObserver.disconnect();
       videoHandlers.forEach(({ card, enter, leave }) => {
         card.removeEventListener("mouseenter", enter);
